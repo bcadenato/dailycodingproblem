@@ -5,6 +5,7 @@ def get_n_letters(s):
     
     return len(x)
 
+
 def get_longest_str(k, s):
     # String position indices
     i = 0
@@ -40,7 +41,8 @@ def get_longest_str(k, s):
     
     return (s[t_start:t_end])
 
-s = get_longest_str(2, 'abcbadcddddcbbab')  
+
+s = get_longest_str(3, 'abcbadcddddcbbab')  
 
 print(f"The longest string is {s}")
 
