@@ -62,12 +62,36 @@ def arrange_array(array):
 
     return array
 
+def arrange_array_2(array):
+    idx_low = 0
+    idx_mid = 0
+    idx_high = len(array) - 1
+
+    while idx_mid < idx_high:
+        if array[idx_mid] == 'B':
+            swap_array(array, idx_mid, idx_high)
+            idx_high -= 1
+
+        if array[idx_mid] == 'R':
+            swap_array(array, idx_mid, idx_low)
+            idx_low += 1
+            idx_mid += 1
+
+        if array[idx_mid] == 'G':
+            idx_mid += 1
+
+    return(array)
+
 
 array_test = ['G', 'B', 'R', 'R', 'B', 'R', 'G']
 
-array_sorted = arrange_array(array_test)
-
+print(f'Sorting array {array_test} with method 1:')
+array_sorted = arrange_array(array_test.copy())
 print(array_sorted)
+
+print(f'Sorting array {array_test} with method 2:')
+array_sorted_2 = arrange_array_2(array_test.copy())
+print(array_sorted_2)
 
 
 
